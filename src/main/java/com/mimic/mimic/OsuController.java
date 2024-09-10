@@ -89,10 +89,10 @@ public class OsuController implements Initializable {
         borderCircle.setStroke(new Color(0, 0, 0, 1));
         borderCircle.setStrokeWidth(3);
 
-        int indiceAleatorio = random.nextInt(4);
+        int indiceAleatorio = random.nextInt(26);
         currentLetter = letras[indiceAleatorio];
         while (currentLetter.equals(lastLetter)) {
-            indiceAleatorio = random.nextInt(4);
+            indiceAleatorio = random.nextInt(26);
             currentLetter = letras[indiceAleatorio];
         }
         lastLetter = currentLetter;
