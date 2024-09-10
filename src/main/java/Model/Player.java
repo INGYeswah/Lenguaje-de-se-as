@@ -30,7 +30,6 @@ public class Player {
     public void addPlayer(Firestore db) {
         try {
             DocumentReference docRef = db.collection("users").document(this.Email);
-            // Add document data with an additional field ("middle")
             Map<String, Object> data = new HashMap<>();
             data.put("name", this.Name);
             data.put("nickname", this.Nickname);
@@ -38,6 +37,7 @@ public class Player {
             data.put("password", this.Password);
             data.put("foto", this.Foto);
             data.put("level", this.Level);
+            data.put("puntuacion", 0);
             ApiFuture<WriteResult> result = docRef.set(data);
             System.out.println("Update time : " + result.get().getUpdateTime());
         } catch (InterruptedException | ExecutionException ex) {
